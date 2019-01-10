@@ -1,4 +1,4 @@
-# Proof of Token Ownership
+# Proof of ERC-20 Token Ownership
 
 Two steps:
 
