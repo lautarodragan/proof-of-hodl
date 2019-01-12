@@ -7,10 +7,11 @@ Two steps:
 
 ## Proof of Address Ownership
 
-TBD.
+The user provides the address, a message and the message signature on account creation or over a specific endpoint.
 
-https://ethereum.stackexchange.com/questions/35486/how-to-verify-metamask-account-holder-is-the-real-owner-of-the-address?rq=1
-https://web3js.readthedocs.io/en/1.0/web3-eth.html#sign
+The signature can be validated using [`web3.eth.accounts.recover`](https://web3js.readthedocs.io/en/1.0/web3-eth-accounts.html#recover).
+
+This validation only needs to happen once. 
 
 ## Token Balance Check
 
