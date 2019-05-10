@@ -15,6 +15,8 @@ This validation only needs to happen once.
 
 ## Token Balance Check
 
-We use the EtherScan API to check the token balance of the account.
+Retrieving the balance of an ERC-20 contract for a user can be done in two different ways:
+- Running an Ethereum node
+- Using a thirdy party API
 
-Checking balance against the contract costs ether. Alternative is to run own Ethereum node.
+We use the EtherScan API to check the token balance of the account. 
