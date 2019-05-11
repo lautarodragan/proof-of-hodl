@@ -10,13 +10,8 @@ const signedMessage = {
   "signer": "MEW"
 }
 
-const prefix = message => "\x19Ethereum Signed Message:\n" + message.length + message
+const msgHash = ethereumJsUtil.hashPersonalMessage(Buffer.from(signedMessage.msg))
 
-// const msgHash = ethereumJsUtil.hashPersonalMessage(Buffer.from(signedMessage.msg))
-const msgHash = ethereumJsUtil.keccak(prefix(signedMessage.msg))
-
-// const signatureBuffer = ethereumJsUtil.toBuffer(signedMessage.sig);
-// const signatureParams = ethereumJsUtil.fromRpcSig(signatureBuffer);
 const signatureParams = ethereumJsUtil.fromRpcSig(signedMessage.sig);
 const publicKey = ethereumJsUtil.ecrecover(
   msgHash,
@@ -29,5 +24,5 @@ const addressVerified = ethereumJsUtil.bufferToHex(addressBuffer);
 
 console.log(addressVerified)
 
-console.log(addressVerified === address)
+console.log(addressVerified === address.toLowerCase())
 console.log(addressVerified === signedMessage.address)
