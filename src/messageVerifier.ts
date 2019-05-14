@@ -1,4 +1,4 @@
-const ethereumJsUtil = require('ethereumjs-util')
+import * as ethereumJsUtil from 'ethereumjs-util'
 
 export function verify(address: string, message: string, signature: string) {
   const msgHash = ethereumJsUtil.hashPersonalMessage(Buffer.from(message))
